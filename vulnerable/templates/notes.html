@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Стена заметок — NotesWall{% endblock %}
+{% block body %}
+  <nav>
+    <strong>{{ username }}</strong> |
+    <a href="{{ url_for('notes') }}">Стена заметок</a>
+    <a href="{{ url_for('logout') }}">Выйти</a>
+  </nav>
+  <h2>Новая заметка</h2>
+  <form method="post">
+    <label>Заголовок</label>
+    <input type="text" name="title">
+    <label>Текст</label>
+    <textarea name="content" rows="3"></textarea>
+    <button type="submit">Добавить</button>
+  </form>
+
+  <h2>Все заметки</h2>
+  {% for note in notes %}
+    <div class="note">
+      <h3>{{ note.title }}</h3>
+      <p>{{ note.content | safe }}</p>
+      <div class="meta">автор: {{ note.username }}</div>
+    </div>
+  {% else %}
+    <p>Заметок пока нет.</p>
+  {% endfor %}
+{% endblock %}

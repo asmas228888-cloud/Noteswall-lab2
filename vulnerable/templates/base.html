@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}NotesWall{% endblock %}</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 640px; margin: 40px auto; color: #222; }
+    .note { border: 1px solid #ddd; border-radius: 6px; padding: 10px 14px; margin-bottom: 10px; }
+    .note h3 { margin: 0 0 6px 0; }
+    .meta { color: #888; font-size: 0.85em; }
+    .error { color: #b00020; }
+    nav a { margin-right: 12px; }
+    textarea, input[type=text], input[type=password] { width: 100%; padding: 6px; margin: 4px 0 10px 0; box-sizing: border-box; }
+    button { padding: 6px 14px; }
+  </style>
+</head>
+<body>
+  {% block body %}{% endblock %}
+</body>
+</html>

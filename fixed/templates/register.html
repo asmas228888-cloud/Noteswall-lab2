@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Регистрация — NotesWall{% endblock %}
+{% block body %}
+  <h2>Регистрация</h2>
+  {% if error %}<p class="error">{{ error }}</p>{% endif %}
+  <form method="post">
+    <label>Имя пользователя</label>
+    <input type="text" name="username">
+    <label>Пароль</label>
+    <input type="password" name="password">
+    <button type="submit">Зарегистрироваться</button>
+  </form>
+  <p>Уже есть аккаунт? <a href="{{ url_for('login') }}">Войти</a></p>
+{% endblock %}
